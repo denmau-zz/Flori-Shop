@@ -26,8 +26,8 @@
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
-<body>
-  <div class="hero_area">
+<body class="<?php if($sub_page) {echo 'sub_page';} ?>">
+  <div class="<?php if (!$sub_page) {echo 'hero_area';} ?>">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">

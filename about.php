@@ -1,10 +1,11 @@
 <?php
     $current_page = 'about';
+    $sub_page = true;
     require 'inc/header.tmpl.php';
 ?>
 
 <!-- about section -->
-  <section class="about_section background-white">
+  <section class="about_section">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-xl-7">

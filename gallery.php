@@ -1,10 +1,11 @@
 <?php
     $current_page = 'gallery';
+    $sub_page = true;
     require 'inc/header.tmpl.php';
 ?>
 
   <!-- gallery section -->
-  <section class="gallery_section layout_padding background-white">
+  <section class="gallery_section layout_padding">
 
     <div class="heading_container justify-content-center">
       <h2>

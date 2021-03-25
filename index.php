@@ -1,5 +1,6 @@
 <?php
   $current_page = 'index';
+  $sub_page = false;
   require 'inc/header.tmpl.php';
 ?>
     <!-- slider section -->
