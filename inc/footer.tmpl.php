@@ -35,7 +35,7 @@
               </li>
               <li class="<?php if ($current_page === 'contact') {echo 'active';} ?>">
                 <a href="contact.php">
-                  Contact Us
+                  Contact us
                 </a>
               </li>
             </ul>
