@@ -1,7 +1,8 @@
 /*!
  * Bootstrap v5.0.0-alpha3 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * (https://github.com/twbs/bootstrap/graphs/contributors) Licensed under MIT
+ * (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 (function (global, factory) {
   typeof exports === "object" && typeof module !== "undefined"
@@ -128,7 +129,8 @@
       transitionDelay = _window$getComputedSt.transitionDelay;
 
     var floatTransitionDuration = parseFloat(transitionDuration);
-    var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
+    var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration
+    // is not found
 
     if (!floatTransitionDuration && !floatTransitionDelay) {
       return 0;
@@ -470,7 +472,8 @@
 
   function normalizeParams(originalTypeEvent, handler, delegationFn) {
     var delegation = typeof handler === "string";
-    var originalHandler = delegation ? delegationFn : handler; // allow to get the native events from namespaced events ('click.bs.button' --> 'click')
+    var originalHandler = delegation ? delegationFn : handler; // allow to get the native events from namespaced
+    // events ('click.bs.button' --> 'click')
 
     var typeEvent = originalTypeEvent.replace(stripNameRegex, "");
     var custom = customEvents[typeEvent];
@@ -895,7 +898,8 @@
 
     // Public
     _proto.toggle = function toggle() {
-      // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
+      // Toggle class and sync the `aria-pressed` attribute with the return value
+      // of the `.toggle()` method
       this._element.setAttribute(
         "aria-pressed",
         this._element.classList.toggle(CLASS_NAME_ACTIVE)
@@ -2217,7 +2221,8 @@
     EVENT_CLICK_DATA_API$3,
     SELECTOR_DATA_TOGGLE$1,
     function (event) {
-      // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
+      // preventDefault only for <a> elements (which change the URL) not inside
+      // the collapsible element
       if (event.target.tagName === "A") {
         event.preventDefault();
       }
@@ -2269,7 +2274,8 @@
   });
 
   /**!
-   * @fileOverview Kickass library to create and place poppers near their reference elements.
+   * @fileOverview Kickass library to create and place poppers near their
+   * reference elements.
    * @version 1.16.1
    * @license
    * Copyright (c) 2016 Federico Zivolo and contributors
@@ -2281,8 +2287,8 @@
    * copies of the Software, and to permit persons to whom the Software is
    * furnished to do so, subject to the following conditions:
    *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
+   * The above copyright notice and this permission notice shall be included in
+   * all copies or substantial portions of the Software.
    *
    * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
    * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -2404,7 +2410,8 @@
    * @returns {Element} scroll parent
    */
   function getScrollParent(element) {
-    // Return body, `getScroll` will take care to get the correct `scrollTop` from it
+    // Return body, `getScroll` will take care to get the correct `scrollTop` from
+    // it
     if (!element) {
       return document.body;
     }
@@ -2432,10 +2439,12 @@
   }
 
   /**
-   * Returns the reference node of the reference object, or the reference object itself.
+   * Returns the reference node of the reference object, or the reference object
+   * itself.
    * @method
    * @memberof Popper.Utils
-   * @param {Element|Object} reference - the reference element (the popper will be relative to this)
+   * @param {Element|Object} reference - the reference element (the popper will be
+   *     relative to this)
    * @returns {Element} parent
    */
   function getReferenceNode(reference) {
@@ -2542,12 +2551,14 @@
    * @returns {Element} common offset parent
    */
   function findCommonOffsetParent(element1, element2) {
-    // This check is needed to avoid errors in case one of the elements isn't defined for any reason
+    // This check is needed to avoid errors in case one of the elements isn't
+    // defined for any reason
     if (!element1 || !element1.nodeType || !element2 || !element2.nodeType) {
       return document.documentElement;
     }
 
-    // Here we make sure to give as "start" the element that comes first in the DOM
+    // Here we make sure to give as "start" the element that comes first in the
+    // DOM
     var order =
       element1.compareDocumentPosition(element2) &
       Node.DOCUMENT_POSITION_FOLLOWING;
@@ -2608,12 +2619,15 @@
   }
 
   /*
-   * Sum or subtract the element scroll values (left and top) from a given rect object
+   * Sum or subtract the element scroll values (left and top) from a given rect
+   * object
    * @method
    * @memberof Popper.Utils
    * @param {Object} rect - Rect object you want to change
-   * @param {HTMLElement} element - The element from the function reads the scroll values
-   * @param {Boolean} subtract - set to true if you want to subtract the scroll values
+   * @param {HTMLElement} element - The element from the function reads the scroll
+   *     values
+   * @param {Boolean} subtract - set to true if you want to subtract the scroll
+   *     values
    * @return {Object} rect - The modifier rect object
    */
   function includeScroll(rect, element) {
@@ -2792,8 +2806,8 @@
     var horizScrollbar = element.offsetWidth - width;
     var vertScrollbar = element.offsetHeight - height;
 
-    // if an hypothetical scrollbar is detected, we must be sure it's not a `border`
-    // we make this check conditional for performance reasons
+    // if an hypothetical scrollbar is detected, we must be sure it's not a
+    // `border` we make this check conditional for performance reasons
     if (horizScrollbar || vertScrollbar) {
       var styles = getStyleComputedProperty(element);
       horizScrollbar -= getBordersSize(styles, "x");
@@ -2820,7 +2834,8 @@
     var borderTopWidth = parseFloat(styles.borderTopWidth);
     var borderLeftWidth = parseFloat(styles.borderLeftWidth);
 
-    // In cases where the parent is fixed, we must ignore negative scroll in offset calc
+    // In cases where the parent is fixed, we must ignore negative scroll in
+    // offset calc
     if (fixedPosition && isHTML) {
       parentRect.top = Math.max(parentRect.top, 0);
       parentRect.left = Math.max(parentRect.left, 0);
@@ -2847,7 +2862,8 @@
       offsets.left -= borderLeftWidth - marginLeft;
       offsets.right -= borderLeftWidth - marginLeft;
 
-      // Attach marginTop and marginLeft because in some circumstances we may need them
+      // Attach marginTop and marginLeft because in some circumstances we may need
+      // them
       offsets.marginTop = marginTop;
       offsets.marginLeft = marginLeft;
     }
@@ -2917,7 +2933,8 @@
    */
 
   function getFixedPositionOffsetParent(element) {
-    // This check is needed to avoid errors in case one of the elements isn't defined for any reason
+    // This check is needed to avoid errors in case one of the elements isn't
+    // defined for any reason
     if (!element || !element.parentElement || isIE()) {
       return document.documentElement;
     }
@@ -2935,7 +2952,8 @@
    * @param {HTMLElement} popper
    * @param {HTMLElement} reference
    * @param {number} padding
-   * @param {HTMLElement} boundariesElement - Element used to define the boundaries
+   * @param {HTMLElement} boundariesElement - Element used to define the
+   *     boundaries
    * @param {Boolean} fixedPosition - Is in fixed position mode
    * @returns {Object} Coordinates of the boundaries
    */
@@ -3095,9 +3113,11 @@
    * @memberof Popper.Utils
    * @param {Object} state
    * @param {Element} popper - the popper element
-   * @param {Element} reference - the reference element (the popper will be relative to this)
+   * @param {Element} reference - the reference element (the popper will be
+   *     relative to this)
    * @param {Element} fixedPosition - is in fixed position mode
-   * @returns {Object} An object containing the offsets which will be applied to the popper
+   * @returns {Object} An object containing the offsets which will be applied to
+   *     the popper
    */
   function getReferenceOffsets(state, popper, reference) {
     var fixedPosition =
@@ -3154,9 +3174,11 @@
    * @memberof Popper.Utils
    * @param {Object} position - CSS position the Popper will get applied
    * @param {HTMLElement} popper - the popper element
-   * @param {Object} referenceOffsets - the reference offsets (the popper will be relative to this)
+   * @param {Object} referenceOffsets - the reference offsets (the popper will be
+   *     relative to this)
    * @param {String} placement - one of the valid placement options
-   * @returns {Object} popperOffsets - An object containing the offsets which will be applied to the popper
+   * @returns {Object} popperOffsets - An object containing the offsets which will
+   *     be applied to the popper
    */
   function getPopperOffsets(popper, referenceOffsets, placement) {
     placement = placement.split("-")[0];
@@ -3170,7 +3192,8 @@
       height: popperRect.height,
     };
 
-    // depending by the popper placement we have to compute its offsets slightly differently
+    // depending by the popper placement we have to compute its offsets slightly
+    // differently
     var isHoriz = ["right", "left"].indexOf(placement) !== -1;
     var mainSide = isHoriz ? "top" : "left";
     var secondarySide = isHoriz ? "left" : "top";
@@ -3361,7 +3384,8 @@
    * @method
    * @memberof Popper.Utils
    * @argument {String} property (camelCase)
-   * @returns {String} prefixed property (camelCase or PascalCase, depending on the vendor prefix)
+   * @returns {String} prefixed property (camelCase or PascalCase, depending on
+   *     the vendor prefix)
    */
   function getSupportedPropertyName(property) {
     var prefixes = [false, "ms", "Webkit", "Moz", "O"];
@@ -3531,7 +3555,8 @@
    * @memberof Popper.Utils
    * @argument {Element} element - Element to apply the style to
    * @argument {Object} styles
-   * Object with a list of properties and values which will be applied to the element
+   * Object with a list of properties and values which will be applied to the
+   * element
    */
   function setStyles(element, styles) {
     Object.keys(styles).forEach(function (prop) {
@@ -3554,7 +3579,8 @@
    * @memberof Popper.Utils
    * @argument {Element} element - Element to apply the attributes to
    * @argument {Object} styles
-   * Object with a list of properties and values which will be applied to the element
+   * Object with a list of properties and values which will be applied to the
+   * element
    */
   function setAttributes(element, attributes) {
     Object.keys(attributes).forEach(function (prop) {
@@ -3571,8 +3597,10 @@
    * @function
    * @memberof Modifiers
    * @argument {Object} data - The data object generated by `update` method
-   * @argument {Object} data.styles - List of style properties - values to apply to popper element
-   * @argument {Object} data.attributes - List of attribute properties - values to apply to popper element
+   * @argument {Object} data.styles - List of style properties - values to apply
+   * to popper element
+   * @argument {Object} data.attributes - List of attribute properties - values to
+   * apply to popper element
    * @argument {Object} options - Modifiers configuration and options
    * @returns {Object} The same data object
    */
@@ -3601,7 +3629,8 @@
    * correct popper offsets.
    * @method
    * @memberof Popper.modifiers
-   * @param {HTMLElement} reference - The reference element used to position the popper
+   * @param {HTMLElement} reference - The reference element used to position the
+   *     popper
    * @param {HTMLElement} popper - The HTML element used as popper
    * @param {Object} options - Popper.js options
    */
@@ -3765,8 +3794,9 @@
     var left = void 0,
       top = void 0;
     if (sideA === "bottom") {
-      // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
-      // and not the bottom of the html element
+      // when offsetParent is <html> the positioning is relative to the bottom of
+      // the screen (excluding the scrollbar) and not the bottom of the html
+      // element
       if (offsetParent.nodeName === "HTML") {
         top = -offsetParent.clientHeight + offsets.bottom;
       } else {
@@ -3791,7 +3821,8 @@
       styles[sideB] = 0;
       styles.willChange = "transform";
     } else {
-      // othwerise, we use the standard `top`, `left`, `bottom` and `right` properties
+      // othwerise, we use the standard `top`, `left`, `bottom` and `right`
+      // properties
       var invertTop = sideA === "bottom" ? -1 : 1;
       var invertLeft = sideB === "right" ? -1 : 1;
       styles[sideA] = top * invertTop;
@@ -3979,15 +4010,16 @@
    * - `-end`
    *
    * Variations are interpreted easily if you think of them as the left to right
-   * written languages. Horizontally (`top` and `bottom`), `start` is left and `end`
-   * is right.<br />
-   * Vertically (`left` and `right`), `start` is top and `end` is bottom.
+   * written languages. Horizontally (`top` and `bottom`), `start` is left and
+   * `end` is right.<br /> Vertically (`left` and `right`), `start` is top and
+   * `end` is bottom.
    *
    * Some valid examples are:
    * - `top-end` (on top of reference, right aligned)
    * - `right-start` (on right of reference, top aligned)
    * - `bottom` (on bottom, centered)
-   * - `auto-end` (on the side with more space available, alignment depends by placement)
+   * - `auto-end` (on the side with more space available, alignment depends by
+   * placement)
    *
    * @static
    * @type {Array}
@@ -4024,7 +4056,8 @@
    * @method
    * @memberof Popper.Utils
    * @argument {String} placement - A valid placement (it accepts variations)
-   * @argument {Boolean} counter - Set to true to walk the placements counterclockwise
+   * @argument {Boolean} counter - Set to true to walk the placements
+   * counterclockwise
    * @returns {Array} placements including their variations
    */
   function clockwise(placement) {
@@ -4058,7 +4091,8 @@
     }
 
     if (data.flipped && data.placement === data.originalPlacement) {
-      // seems like flip is trying to loop, probably there's not enough space on any of the flippable sides
+      // seems like flip is trying to loop, probably there's not enough space on
+      // any of the flippable sides
       return data;
     }
 
@@ -4101,7 +4135,8 @@
       var popperOffsets = data.offsets.popper;
       var refOffsets = data.offsets.reference;
 
-      // using floor because the reference offsets may contain decimals we are not going to consider here
+      // using floor because the reference offsets may contain decimals we are not
+      // going to consider here
       var floor = Math.floor;
       var overlapsRef =
         (placement === "left" &&
@@ -4287,7 +4322,8 @@
     var useHeight = ["right", "left"].indexOf(basePlacement) !== -1;
 
     // Split the offset string to obtain a list of values and operands
-    // The regex addresses values with the plus or minus sign in front (+10, -20, etc)
+    // The regex addresses values with the plus or minus sign in front (+10, -20,
+    // etc)
     var fragments = offset.split(/(\+|\-)/).map(function (frag) {
       return frag.trim();
     });
@@ -4330,8 +4366,8 @@
       var mergeWithPrevious = false;
       return (
         op
-          // This aggregates any `+` or `-` sign that aren't considered operators
-          // e.g.: 10 + +5 => [10, +, +5]
+          // This aggregates any `+` or `-` sign that aren't considered
+          // operators e.g.: 10 + +5 => [10, +, +5]
           .reduce(function (a, b) {
             if (a[a.length - 1] === "" && ["+", "-"].indexOf(b) !== -1) {
               a[a.length - 1] = b;
@@ -4425,8 +4461,8 @@
     }
 
     // NOTE: DOM access here
-    // resets the popper's position so that the document size can be calculated excluding
-    // the size of the popper element itself
+    // resets the popper's position so that the document size can be calculated
+    // excluding the size of the popper element itself
     var transformProp = getSupportedPropertyName("transform");
     var popperStyles = data.instance.popper.style; // assignment to help minification
     var top = popperStyles.top,
@@ -4640,7 +4676,9 @@
      * @inner
      */
     shift: {
-      /** @prop {number} order=100 - Index used to define the order of execution */
+      /**
+       @prop {number} order=100 - Index used to define the order of execution
+     */
       order: 100,
       /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
       enabled: true,
@@ -4658,16 +4696,17 @@
      * - `vw`, CSS viewport width unit
      * - `vh`, CSS viewport height unit
      *
-     * For length is intended the main axis relative to the placement of the popper.<br />
-     * This means that if the placement is `top` or `bottom`, the length will be the
-     * `width`. In case of `left` or `right`, it will be the `height`.
+     * For length is intended the main axis relative to the placement of the
+     * popper.<br /> This means that if the placement is `top` or `bottom`, the
+     * length will be the `width`. In case of `left` or `right`, it will be the
+     * `height`.
      *
-     * You can provide a single value (as `Number` or `String`), or a pair of values
-     * as `String` divided by a comma or one (or more) white spaces.<br />
+     * You can provide a single value (as `Number` or `String`), or a pair of
+     * values as `String` divided by a comma or one (or more) white spaces.<br />
      * The latter is a deprecated method because it leads to confusion and will be
      * removed in v2.<br />
-     * Additionally, it accepts additions and subtractions between different units.
-     * Note that multiplications and divisions aren't supported.
+     * Additionally, it accepts additions and subtractions between different
+     * units. Note that multiplications and divisions aren't supported.
      *
      * Valid examples are:
      * ```
@@ -4679,32 +4718,38 @@
      * '10 - 5vh + 3%'
      * '-10px + 5vh, 5px - 6%'
      * ```
-     * > **NB**: If you desire to apply offsets to your poppers in a way that may make them overlap
-     * > with their reference element, unfortunately, you will have to disable the `flip` modifier.
-     * > You can read more on this at this [issue](https://github.com/FezVrasta/popper.js/issues/373).
+     * > **NB**: If you desire to apply offsets to your poppers in a way that may
+     * make them overlap > with their reference element, unfortunately, you will
+     * have to disable the `flip` modifier. > You can read more on this at this
+     * [issue](https://github.com/FezVrasta/popper.js/issues/373).
      *
      * @memberof modifiers
      * @inner
      */
     offset: {
-      /** @prop {number} order=200 - Index used to define the order of execution */
+      /**
+       @prop {number} order=200 - Index used to define the order of execution
+     */
       order: 200,
       /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
       enabled: true,
       /** @prop {ModifierFn} */
       fn: offset,
-      /** @prop {Number|String} offset=0
+      /**
+       * @prop {Number|String} offset=0
        * The offset value as described in the modifier description
        */
       offset: 0,
     },
 
     /**
-     * Modifier used to prevent the popper from being positioned outside the boundary.
+     * Modifier used to prevent the popper from being positioned outside the
+     * boundary.
      *
-     * A scenario exists where the reference itself is not within the boundaries.<br />
-     * We can say it has "escaped the boundaries" — or just "escaped".<br />
-     * In this case we need to decide whether the popper should either:
+     * A scenario exists where the reference itself is not within the
+     * boundaries.<br /> We can say it has "escaped the boundaries" — or just
+     * "escaped".<br /> In this case we need to decide whether the popper should
+     * either:
      *
      * - detach from the reference and remain "trapped" in the boundaries, or
      * - if it should ignore the boundary and "escape with its reference"
@@ -4717,7 +4762,9 @@
      * @inner
      */
     preventOverflow: {
-      /** @prop {number} order=300 - Index used to define the order of execution */
+      /**
+       @prop {number} order=300 - Index used to define the order of execution
+     */
       order: 300,
       /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
       enabled: true,
@@ -4725,8 +4772,9 @@
       fn: preventOverflow,
       /**
        * @prop {Array} [priority=['left','right','top','bottom']]
-       * Popper will try to prevent overflow following these priorities by default,
-       * then, it could overflow on the left and on top of the `boundariesElement`
+       * Popper will try to prevent overflow following these priorities by
+       * default, then, it could overflow on the left and on top of the
+       * `boundariesElement`
        */
       priority: ["left", "right", "top", "bottom"],
       /**
@@ -4745,16 +4793,18 @@
     },
 
     /**
-     * Modifier used to make sure the reference and its popper stay near each other
-     * without leaving any gap between the two. Especially useful when the arrow is
-     * enabled and you want to ensure that it points to its reference element.
-     * It cares only about the first axis. You can still have poppers with margin
-     * between the popper and its reference element.
+     * Modifier used to make sure the reference and its popper stay near each
+     * other without leaving any gap between the two. Especially useful when the
+     * arrow is enabled and you want to ensure that it points to its reference
+     * element. It cares only about the first axis. You can still have poppers
+     * with margin between the popper and its reference element.
      * @memberof modifiers
      * @inner
      */
     keepTogether: {
-      /** @prop {number} order=400 - Index used to define the order of execution */
+      /**
+       @prop {number} order=400 - Index used to define the order of execution
+     */
       order: 400,
       /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
       enabled: true,
@@ -4773,13 +4823,18 @@
      * @inner
      */
     arrow: {
-      /** @prop {number} order=500 - Index used to define the order of execution */
+      /**
+       @prop {number} order=500 - Index used to define the order of execution
+     */
       order: 500,
       /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
       enabled: true,
       /** @prop {ModifierFn} */
       fn: arrow,
-      /** @prop {String|HTMLElement} element='[x-arrow]' - Selector or node used as arrow */
+      /**
+       @prop {String|HTMLElement} element='[x-arrow]' - Selector or node used
+       as arrow
+     */
       element: "[x-arrow]",
     },
 
@@ -4795,17 +4850,23 @@
      * @inner
      */
     flip: {
-      /** @prop {number} order=600 - Index used to define the order of execution */
+      /**
+           @prop {number} order=600 - Index used to define the order of
+           execution
+         */
       order: 600,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      /**
+           @prop {Boolean} enabled=true - Whether the modifier is enabled or
+           not
+         */
       enabled: true,
       /** @prop {ModifierFn} */
       fn: flip,
       /**
        * @prop {String|Array} behavior='flip'
        * The behavior used to change the popper's placement. It can be one of
-       * `flip`, `clockwise`, `counterclockwise` or an array with a list of valid
-       * placements (with optional variations)
+       * `flip`, `clockwise`, `counterclockwise` or an array with a list of
+       * valid placements (with optional variations)
        */
       behavior: "flip",
       /**
@@ -4822,16 +4883,16 @@
       boundariesElement: "viewport",
       /**
        * @prop {Boolean} flipVariations=false
-       * The popper will switch placement variation between `-start` and `-end` when
-       * the reference element overlaps its boundaries.
+       * The popper will switch placement variation between `-start` and
+       * `-end` when the reference element overlaps its boundaries.
        *
        * The original placement should have a set variation.
        */
       flipVariations: false,
       /**
        * @prop {Boolean} flipVariationsByContent=false
-       * The popper will switch placement variation between `-start` and `-end` when
-       * the popper element overlaps its reference boundaries.
+       * The popper will switch placement variation between `-start` and
+       * `-end` when the popper element overlaps its reference boundaries.
        *
        * The original placement should have a set variation.
        */
@@ -4839,25 +4900,31 @@
     },
 
     /**
-     * Modifier used to make the popper flow toward the inner of the reference element.
-     * By default, when this modifier is disabled, the popper will be placed outside
-     * the reference element.
+     * Modifier used to make the popper flow toward the inner of the reference
+     * element. By default, when this modifier is disabled, the popper will be
+     * placed outside the reference element.
      * @memberof modifiers
      * @inner
      */
     inner: {
-      /** @prop {number} order=700 - Index used to define the order of execution */
+      /**
+           @prop {number} order=700 - Index used to define the order of
+           execution
+         */
       order: 700,
-      /** @prop {Boolean} enabled=false - Whether the modifier is enabled or not */
+      /**
+           @prop {Boolean} enabled=false - Whether the modifier is enabled or
+           not
+         */
       enabled: false,
       /** @prop {ModifierFn} */
       fn: inner,
     },
 
     /**
-     * Modifier used to hide the popper when its reference element is outside of the
-     * popper boundaries. It will set a `x-out-of-boundaries` attribute which can
-     * be used to hide with a CSS selector the popper when its reference is
+     * Modifier used to hide the popper when its reference element is outside of
+     * the popper boundaries. It will set a `x-out-of-boundaries` attribute which
+     * can be used to hide with a CSS selector the popper when its reference is
      * out of boundaries.
      *
      * Requires the `preventOverflow` modifier before it in order to work.
@@ -4865,9 +4932,15 @@
      * @inner
      */
     hide: {
-      /** @prop {number} order=800 - Index used to define the order of execution */
+      /**
+           @prop {number} order=800 - Index used to define the order of
+           execution
+         */
       order: 800,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      /**
+           @prop {Boolean} enabled=true - Whether the modifier is enabled or
+           not
+         */
       enabled: true,
       /** @prop {ModifierFn} */
       fn: hide,
@@ -4889,9 +4962,15 @@
      * @inner
      */
     computeStyle: {
-      /** @prop {number} order=850 - Index used to define the order of execution */
+      /**
+           @prop {number} order=850 - Index used to define the order of
+           execution
+         */
       order: 850,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      /**
+           @prop {Boolean} enabled=true - Whether the modifier is enabled or
+           not
+         */
       enabled: true,
       /** @prop {ModifierFn} */
       fn: computeStyle,
@@ -4904,13 +4983,15 @@
       /**
        * @prop {string} [x='bottom']
        * Where to anchor the X axis (`bottom` or `top`). AKA X offset origin.
-       * Change this if your popper should grow in a direction different from `bottom`
+       * Change this if your popper should grow in a direction different from
+       * `bottom`
        */
       x: "bottom",
       /**
        * @prop {string} [x='left']
        * Where to anchor the Y axis (`left` or `right`). AKA Y offset origin.
-       * Change this if your popper should grow in a direction different from `right`
+       * Change this if your popper should grow in a direction different from
+       * `right`
        */
       y: "right",
     },
@@ -4918,29 +4999,38 @@
     /**
      * Applies the computed styles to the popper element.
      *
-     * All the DOM manipulations are limited to this modifier. This is useful in case
-     * you want to integrate Popper.js inside a framework or view library and you
-     * want to delegate all the DOM manipulations to it.
+     * All the DOM manipulations are limited to this modifier. This is useful in
+     * case you want to integrate Popper.js inside a framework or view library and
+     * you want to delegate all the DOM manipulations to it.
      *
-     * Note that if you disable this modifier, you must make sure the popper element
-     * has its position set to `absolute` before Popper.js can do its work!
+     * Note that if you disable this modifier, you must make sure the popper
+     * element has its position set to `absolute` before Popper.js can do its
+     * work!
      *
-     * Just disable this modifier and define your own to achieve the desired effect.
+     * Just disable this modifier and define your own to achieve the desired
+     * effect.
      *
      * @memberof modifiers
      * @inner
      */
     applyStyle: {
-      /** @prop {number} order=900 - Index used to define the order of execution */
+      /**
+           @prop {number} order=900 - Index used to define the order of
+           execution
+         */
       order: 900,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      /**
+           @prop {Boolean} enabled=true - Whether the modifier is enabled or
+           not
+         */
       enabled: true,
       /** @prop {ModifierFn} */
       fn: applyStyle,
       /** @prop {Function} */
       onLoad: applyStyleOnLoad,
       /**
-       * @deprecated since version 1.10.0, the property moved to `computeStyle` modifier
+       * @deprecated since version 1.10.0, the property moved to
+       *     `computeStyle` modifier
        * @prop {Boolean} gpuAcceleration=true
        * If true, it uses the CSS 3D transformation to position the popper.
        * Otherwise, it will use the `top` and `left` properties
@@ -4950,22 +5040,34 @@
   };
 
   /**
-   * The `dataObject` is an object containing all the information used by Popper.js.
-   * This object is passed to modifiers and to the `onCreate` and `onUpdate` callbacks.
+   * The `dataObject` is an object containing all the information used by
+   * Popper.js. This object is passed to modifiers and to the `onCreate` and
+   * `onUpdate` callbacks.
    * @name dataObject
    * @property {Object} data.instance The Popper.js instance
    * @property {String} data.placement Placement applied to popper
-   * @property {String} data.originalPlacement Placement originally defined on init
-   * @property {Boolean} data.flipped True if popper has been flipped by flip modifier
-   * @property {Boolean} data.hide True if the reference element is out of boundaries, useful to know when to hide the popper
-   * @property {HTMLElement} data.arrowElement Node used as arrow by arrow modifier
-   * @property {Object} data.styles Any CSS property defined here will be applied to the popper. It expects the JavaScript nomenclature (eg. `marginBottom`)
-   * @property {Object} data.arrowStyles Any CSS property defined here will be applied to the popper arrow. It expects the JavaScript nomenclature (eg. `marginBottom`)
+   * @property {String} data.originalPlacement Placement originally defined on
+   * init
+   * @property {Boolean} data.flipped True if popper has been flipped by flip
+   * modifier
+   * @property {Boolean} data.hide True if the reference element is out of
+   * boundaries, useful to know when to hide the popper
+   * @property {HTMLElement} data.arrowElement Node used as arrow by arrow
+   * modifier
+   * @property {Object} data.styles Any CSS property defined here will be applied
+   * to the popper. It expects the JavaScript nomenclature (eg. `marginBottom`)
+   * @property {Object} data.arrowStyles Any CSS property defined here will be
+   * applied to the popper arrow. It expects the JavaScript nomenclature (eg.
+   * `marginBottom`)
    * @property {Object} data.boundaries Offsets of the popper boundaries
-   * @property {Object} data.offsets The measurements of popper, reference and arrow elements
-   * @property {Object} data.offsets.popper `top`, `left`, `width`, `height` values
-   * @property {Object} data.offsets.reference `top`, `left`, `width`, `height` values
-   * @property {Object} data.offsets.arrow] `top` and `left` offsets, only one of them will be different from 0
+   * @property {Object} data.offsets The measurements of popper, reference and
+   * arrow elements
+   * @property {Object} data.offsets.popper `top`, `left`, `width`, `height`
+   * values
+   * @property {Object} data.offsets.reference `top`, `left`, `width`, `height`
+   * values
+   * @property {Object} data.offsets.arrow] `top` and `left` offsets, only one of
+   * them will be different from 0
    */
 
   /**
@@ -5029,8 +5131,8 @@
     onUpdate: function onUpdate() {},
 
     /**
-     * List of modifiers used to modify the offsets before they are applied to the popper.
-     * They provide most of the functionalities of Popper.js.
+     * List of modifiers used to modify the offsets before they are applied to the
+     * popper. They provide most of the functionalities of Popper.js.
      * @prop {modifiers}
      */
     modifiers: modifiers,
@@ -5052,9 +5154,11 @@
     /**
      * Creates a new Popper.js instance.
      * @class Popper
-     * @param {Element|referenceObject} reference - The reference element used to position the popper
+     * @param {Element|referenceObject} reference - The reference element used to
+     *     position the popper
      * @param {Element} popper - The HTML / XML element used as the popper
-     * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
+     * @param {Object} options - Your custom options to override the ones defined
+     *     in [Defaults](#defaults)
      * @return {Object} instance - The generated Popper.js instance
      */
     function Popper(reference, popper) {
@@ -5112,10 +5216,10 @@
           return a.order - b.order;
         });
 
-      // modifiers have the ability to execute arbitrary code when Popper.js get inited
-      // such code is executed in the same order of its modifier
-      // they could add new properties to their options configuration
-      // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
+      // modifiers have the ability to execute arbitrary code when Popper.js get
+      // inited such code is executed in the same order of its modifier they could
+      // add new properties to their options configuration BE AWARE: don't add
+      // options to `options.modifiers.name` but to `modifierOptions`!
       this.modifiers.forEach(function (modifierOptions) {
         if (modifierOptions.enabled && isFunction(modifierOptions.onLoad)) {
           modifierOptions.onLoad(
@@ -5133,7 +5237,8 @@
 
       var eventsEnabled = this.options.eventsEnabled;
       if (eventsEnabled) {
-        // setup event listeners, they will take care of update the position in specific situations
+        // setup event listeners, they will take care of update the position in
+        // specific situations
         this.enableEventListeners();
       }
 
@@ -5196,9 +5301,9 @@
   })();
 
   /**
-   * The `referenceObject` is an object that provides an interface compatible with Popper.js
-   * and lets you use it as replacement of a real DOM node.<br />
-   * You can use this method to position a popper relatively to a set of coordinates
+   * The `referenceObject` is an object that provides an interface compatible with
+   * Popper.js and lets you use it as replacement of a real DOM node.<br /> You
+   * can use this method to position a popper relatively to a set of coordinates
    * in case you don't have a DOM node to use as reference.
    *
    * ```
@@ -5208,7 +5313,8 @@
    * NB: This feature isn't supported in Internet Explorer 10.
    * @name referenceObject
    * @property {Function} data.getBoundingClientRect
-   * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
+   * A function that returns a set of coordinates compatible with the native
+   * `getBoundingClientRect` method.
    * @property {number} data.clientWidth
    * An ES6 getter that will return the width of the virtual reference element.
    * @property {number} data.clientHeight
@@ -5235,7 +5341,8 @@
   var TAB_KEY = "Tab";
   var ARROW_UP_KEY = "ArrowUp";
   var ARROW_DOWN_KEY = "ArrowDown";
-  var RIGHT_MOUSE_BUTTON = 2; // MouseEvent.button value for the secondary button, usually the right button
+  var RIGHT_MOUSE_BUTTON = 2; // MouseEvent.button value for the secondary button,
+  // usually the right button
 
   var REGEXP_KEYDOWN = new RegExp(
     ARROW_UP_KEY + "|" + ARROW_DOWN_KEY + "|" + ESCAPE_KEY
@@ -6302,8 +6409,10 @@
       var _this10 = this;
 
       if (this._isBodyOverflowing) {
-        // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
-        //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
+        // Note: DOMNode.style.paddingRight returns the actual value or '' if not
+        // set
+        //   while $(DOMNode).css('padding-right') returns the calculated value or
+        //   0 if not set
         // Adjust fixed content padding
         SelectorEngine.find(SELECTOR_FIXED_CONTENT).forEach(function (element) {
           var actualPadding = element.style.paddingRight;
@@ -6526,14 +6635,17 @@
   /**
    * A pattern that recognizes a commonly useful subset of URLs that are safe.
    *
-   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+   * Shoutout to Angular 7
+   * https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
   var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/gi;
   /**
-   * A pattern that matches safe data URLs. Only matches image, video and audio types.
+   * A pattern that matches safe data URLs. Only matches image, video and audio
+   * types.
    *
-   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+   * Shoutout to Angular 7
+   * https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
   var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i;
@@ -6966,7 +7078,8 @@
         return;
       }
 
-      tip.classList.remove(CLASS_NAME_SHOW$3); // If this is a touch-enabled device we remove the extra
+      tip.classList.remove(CLASS_NAME_SHOW$3); // If this is a touch-enabled
+      // device we remove the extra
       // empty mouseover listeners we added for iOS support
 
       if ("ontouchstart" in document.documentElement) {
@@ -7579,7 +7692,8 @@
     };
 
     _proto.setContent = function setContent() {
-      var tip = this.getTipElement(); // we use append for html objects to maintain js events
+      var tip = this.getTipElement(); // we use append for html objects to
+      // maintain js events
 
       this.setElementContent(
         SelectorEngine.findOne(SELECTOR_TITLE, tip),
@@ -7984,7 +8098,8 @@
           listGroup
         ) {
           // Set triggered links parents as active
-          // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
+          // With both <ul> and <nav> markup a parent is the previous sibling
+          // of any nav ancestor
           SelectorEngine.prev(
             listGroup,
             SELECTOR_NAV_LINKS + ", " + SELECTOR_LIST_ITEMS
