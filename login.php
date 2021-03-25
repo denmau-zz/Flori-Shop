@@ -20,11 +20,11 @@
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username"/>
+                    <input type="email" placeholder="email" required/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password"/>
+                    <input type="password" placeholder="Password" required/>
                 </div>
                 <input type="submit" value="Login" class="btn solid"/>
             </form>
@@ -32,16 +32,16 @@
                 <h2 class="flori-title"><a href="index.php">Flori Shop</a></h2>
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username"/>
-                </div>
-                <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email"/>
+                    <input type="email" placeholder="Email" required/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password"/>
+                    <input type="password" placeholder="Password" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Repeat Password" required/>
                 </div>
                 <input type="submit" class="btn" value="Sign up"/>
             </form>
