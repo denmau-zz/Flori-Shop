@@ -1,8 +1,10 @@
 <?php
     $current_page = 'about';
     $sub_page = true;
-    require 'inc/header.tmpl.php';
+    require 'header.tmpl.php';
 ?>
+<body>
+  <?php require 'navbar.tmpl.php'; ?>
 
 <!-- about section -->
   <section class="about_section">
@@ -36,6 +38,6 @@
   <!-- end about section -->
 
   <?php
-    require 'inc/footer.tmpl.php';
-?>
+    require 'footer.tmpl.php';
+  ?>
  

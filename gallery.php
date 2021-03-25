@@ -1,9 +1,11 @@
 <?php
     $current_page = 'gallery';
     $sub_page = true;
-    require 'inc/header.tmpl.php';
+    require 'header.tmpl.php';
 ?>
-
+<body>
+  <?php require 'navbar.tmpl.php'; ?>
+  
   <!-- gallery section -->
   <section class="gallery_section layout_padding">
 
@@ -55,5 +57,5 @@
   <!-- end gallery section -->
 
 <?php
-    require 'inc/footer.tmpl.php';
+    require 'footer.tmpl.php';
 ?>

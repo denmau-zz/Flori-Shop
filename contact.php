@@ -1,8 +1,11 @@
 <?php
     $current_page = 'contact';
     $sub_page = true;
-    require 'inc/header.tmpl.php';
+    require 'header.tmpl.php';
 ?>
+<body>
+  <?php require 'navbar.tmpl.php'; ?>
+  
 <!-- contact section -->
   <section class="contact_section layout_padding">
     <div class="container ">
@@ -39,5 +42,5 @@
   <!-- end contact section -->
 
 <?php
-    require 'inc/footer.tmpl.php';
+    require 'footer.tmpl.php';
 ?>
