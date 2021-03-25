@@ -38,6 +38,9 @@ html {
 
 body {
   @include main-font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   color: #0c0c0c;
   background-color: #ffffff;
   overflow-x: hidden;

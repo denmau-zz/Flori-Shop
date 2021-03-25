@@ -24,9 +24,6 @@
               <input type="email" placeholder="Email" />
             </div>
             <div>
-              <input type="text" placeholder="Pone Number" />
-            </div>
-            <div>
               <input type="text" class="message-box" placeholder="Message" />
             </div>
             <div class="d-flex  mt-4 ">

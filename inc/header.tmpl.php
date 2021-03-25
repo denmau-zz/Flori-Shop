@@ -32,7 +32,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.php">
+          <a class="navbar-brand" href="index.php" translate="no">
             <span>
               Flori Shop
             </span>
@@ -58,14 +58,13 @@
                 </li>
               </ul>
             </div>
-            <div class="quote_btn-container ">
-              <a href="login_signup.php">
-                Log in
-              </a>
-              <a href="">
-                <img src="img/cart.png" alt="">
-              </a>
-            </div>
+              <ul class="navbar-nav quote_btn-container">
+                <li class="nav-item <?php if ($current_page === 'login') {echo 'active';} ?>">
+                  <a class="nav-link" href="login.php">Log In <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item <?php if ($current_page === 'about') {echo 'active';} ?>">
+                  <a href="#"><img src="img/cart.png" alt=""></a>
+                </li>
           </div>
         </nav>
       </div>
